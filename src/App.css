@@ -1,11 +1,13 @@
+/* Container for book cards */
 .books-container {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
+  padding: 20px;
 }
 
-/* book-card */
+/* Individual book card */
 .book-card {
   display: flex;
   flex-direction: column;
@@ -15,8 +17,10 @@
   border: 1px solid #ddd;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  color: #000000;
+  color: #000;
   text-align: center;
+  transition: transform 0.3s;
+  cursor: pointer;
 }
 
 .book-card:hover {
@@ -28,8 +32,7 @@
   height: 150px;
   object-fit: cover;
   border-radius: 5px;
-  margin-bottom: 10px;
-  margin-top: 15px;
+  margin: 15px 0 10px;
 }
 
 .book-card h3 {
@@ -42,7 +45,6 @@
   font-size: 14px;
 }
 
-/* bookcard */
 /* Container to center the book card */
 .book-container {
   display: flex;
@@ -50,116 +52,31 @@
   align-items: center;
   min-height: 100vh;
   padding: 20px;
-  background: linear-gradient(
-    135deg,
-    #e0f7fa,
-    #ffe0b2
-  ); /* Gradient background */
+  background-color: #f0f0f0; /* Neutral background color */
 }
 
-/* Book card layout with abstract styling */
+/* Book card layout */
 .bookcard {
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Align items to the left */
-  width: 350px; /* Width for a compact look */
+  align-items: flex-start;
+  width: 350px;
   padding: 20px;
-  border: 2px solid #333; /* Solid border for contrast */
-  border-radius: 12px; /* Rounded corners */
-  background: #fff; /* White background for clarity */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Pronounced shadow */
-  color: #333; /* Darker text color */
-  text-align: left; /* Left-align text */
-  position: relative; /* For positioning pseudo-elements */
-  overflow: hidden; /* Hide overflow */
+  border: 2px solid #333;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  color: #333;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
 }
 
-/* Decorative dots with overlapping multi-colors */
+/* Decorative dots */
 .bookcard::before {
   content: "";
   position: absolute;
   top: -10%;
   right: -10%;
-  width: 120%;
-  height: 120%;
-  background: radial-gradient(
-      circle,
-      rgba(255, 105, 97, 0.6) 15%,
-      transparent 15%
-    ),
-    radial-gradient(circle, rgba(255, 223, 0, 0.6) 25%, transparent 25%),
-    radial-gradient(circle, rgba(77, 182, 172, 0.6) 35%, transparent 35%),
-    radial-gradient(circle, rgba(100, 181, 246, 0.6) 45%, transparent 45%),
-    radial-gradient(circle, rgba(255, 87, 34, 0.6) 55%, transparent 55%);
-  background-position: 10% 10%, 50% 20%, 80% 30%, 30% 60%, 70% 80%;
-  background-size: 15% 15%, 20% 20%, 25% 25%, 30% 30%, 20% 20%;
-  background-repeat: no-repeat;
-  z-index: 0; /* Ensure it is behind the content */
-}
-
-/* Title styling with bold font */
-#titles {
-  font-size: 24px;
-  font-weight: bold;
-  margin: 0 0 10px;
-  position: relative;
-  z-index: 1; /* Ensure text is above pseudo-element */
-}
-
-/* Info section: Author and Availability */
-#info {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 15px;
-}
-
-/* Author styling with larger font size */
-#author {
-  font-size: 18px;
-  margin: 0;
-}
-
-/* Availability styling with distinct font size */
-#available {
-  font-size: 16px;
-  margin: 5px 0;
-}
-
-/* Book cover image styling with rotation and border */
-#img {
-  width: 140px;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 10px;
-  margin: 10px 0;
-  transform: rotate(-5deg); /* Slight rotation */
-}
-
-/* Description styling with varied font size */
-#description {
-  font-size: 20px;
-  line-height: 1.6;
-  margin-top: 10px;
-  text-align: justify; /* Justified text */
-  background-color: #000000;
-}
-
-/* Back button styling with a gradient background */
-.bookcard button {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 20px;
-  background: linear-gradient(
-    90deg,
-    #4caf50,
-    #81c784
-  ); /* Gradient background */
-  color: white;
-  cursor: pointer;
-  transition: background 0.3s, transform 0.3s;
-}
-
-.bookcard button:hover {
-  background: linear-gradient(90deg, #388e3c, #66bb6a);
-  transform: scale(1.05);
+  width: ;
 }

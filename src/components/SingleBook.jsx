@@ -44,11 +44,10 @@ function SingleBook() {
           <h4 id="author">Author: {book.author}</h4>
           <p id="available">Available? {book.available ? "Yes" : "No"}</p>
         </div>
-        <img id="img" src={book.coverimage} alt={book.title} />{" "}
+        <img id="img" src={book.coverimage} alt={book.title} />
         <p id="description">Description: {book.description}</p>
-        <br />
         <Link to="/">
-          <button>Back</button>
+          <button className="back-button">Back</button>
         </Link>
       </div>
     </div>
