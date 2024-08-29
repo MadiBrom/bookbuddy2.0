@@ -1,0 +1,46 @@
+.books-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.book-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 250px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  color: #000000;
+  text-align: center;
+}
+
+.player-card:hover {
+  transform: scale(1.05);
+}
+
+.book-card:hover {
+  transform: scale(1.05);
+}
+
+.book-card img {
+  width: 100px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  margin-top: 15px;
+}
+
+.book-card h3 {
+  margin: 10px 0 5px;
+  font-size: 18px;
+}
+
+.book-card h5 {
+  margin: 0;
+  font-size: 14px;
+}
