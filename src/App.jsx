@@ -20,7 +20,7 @@ function App() {
     <div id="container">
       <Routes>
         <Route path="/" element={<AllBooks books={books} />} />
-        <Route path="/books/:bookId" element={<SingleBook />} />
+        <Route path="/books/:id" element={<SingleBook />} />
       </Routes>
     </div>
   );

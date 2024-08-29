@@ -6,26 +6,27 @@ export async function fetchAllBooks() {
     const json = await response.json();
     return json.books;
   } catch (error) {
-    console.log(error);
+    console.error("Error fetching all books:", error);
     return [];
   }
 }
 
-export async function fetchSingleBook({ books }) {
+export async function fetchSingleBook(id) {
+  console.log(id);
+
   try {
-    const response = await fetch(`API_URL/${books.id}`);
+    const response = await fetch(`${API_URL}/${id}`);
 
     if (!response.ok) {
-      throw new Error("Network response was not ok");
+      const errorMessage = `Error: ${response.status} ${response.statusText}`;
+      console.error("Failed to fetch single book:", errorMessage);
+      throw new Error(errorMessage);
     }
+
     const data = await response.json();
-    setBook(data);
+    return data.book;
   } catch (error) {
     console.error("Error fetching book:", error);
-    setError(error.message);
-  } finally {
-    setLoading(false);
+    throw error;
   }
 }
-
-fetchSingleBook;
