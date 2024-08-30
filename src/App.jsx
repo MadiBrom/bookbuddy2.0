@@ -1,25 +1,38 @@
-import { Route, Routes } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Routes, Route } from "react-router-dom";
 import AllBooks from "./components/AllBooks";
 import SingleBook from "./components/SingleBook";
-import { fetchAllBooks } from "./API";
-import { useState, useEffect } from "react";
+import NavBar from "./components/NavBar";
+import { fetchAllBooks, handleLogin } from "./API";
 import "./App.css";
 
 function App() {
   const [books, setBooks] = useState([]);
+  const [searchParams, setSearchParams] = useState("");
 
   useEffect(() => {
     async function fetchBooks() {
-      const data = await fetchAllBooks();
-      setBooks(data);
+      try {
+        const data = await fetchAllBooks();
+        setBooks(data);
+      } catch (error) {
+        console.error("Failed to fetch books:", error);
+      }
     }
     fetchBooks();
   }, []);
 
+  const handleSearch = (query) => {
+    setSearchParams(query);
+  };
+
   return (
     <div id="container">
       <Routes>
-        <Route path="/" element={<AllBooks books={books} />} />
+        <Route
+          path="/"
+          element={<AllBooks books={books} searchParams={searchParams} />}
+        />
         <Route path="/books/:id" element={<SingleBook />} />
       </Routes>
     </div>

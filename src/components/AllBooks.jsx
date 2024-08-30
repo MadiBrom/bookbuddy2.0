@@ -16,7 +16,7 @@ function AllBooks({ books }) {
   function handleClick(id) {
     navigate(`/books/${id}`);
   }
-
+  console.log("hello");
   return (
     <div className="App">
       <header>
@@ -30,9 +30,20 @@ function AllBooks({ books }) {
             className="book-card"
             onClick={() => handleClick(book.id)}
           >
-            <h3>{book.title}</h3>
-            <h5>Author: {book.author}</h5>
-            <img id="img" src={book.coverimage} alt={book.title} />
+            <h3 className="book-card-title">{book.title}</h3>
+            <div className="book-card-content">
+              <img
+                src={book.coverimage}
+                alt={book.title}
+                className="bookcard-img"
+              />
+              <div className="book-card-details">
+                <h5 className="book-card-author">Author: {book.author}</h5>
+                <p className="book-card-availability">
+                  Available: {book.available ? "Yes" : "No"}
+                </p>
+              </div>
+            </div>
           </div>
         ))}
       </div>

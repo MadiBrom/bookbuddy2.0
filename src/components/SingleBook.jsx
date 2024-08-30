@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { fetchSingleBook } from "../API";
 import { useParams, Link } from "react-router-dom";
+import NavBar from "./NavBar";
 
 function SingleBook() {
   const { id } = useParams();
@@ -45,7 +46,7 @@ function SingleBook() {
           <p id="available">Available? {book.available ? "Yes" : "No"}</p>
         </div>
         <img id="img" src={book.coverimage} alt={book.title} />
-        <p id="description">Description: {book.description}</p>
+        <p id="description">{book.description}</p>
         <Link to="/">
           <button className="back-button">Back</button>
         </Link>
