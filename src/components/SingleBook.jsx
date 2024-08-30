@@ -50,6 +50,9 @@ function SingleBook() {
         <Link to="/">
           <button className="back-button">Back</button>
         </Link>
+        <Link to="/Cart">
+          <button className="add-cart">Add To Cart</button>
+        </Link>
       </div>
     </div>
   );

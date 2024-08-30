@@ -2,8 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import AllBooks from "./components/AllBooks";
 import SingleBook from "./components/SingleBook";
-import NavBar from "./components/NavBar";
-import { fetchAllBooks, handleLogin } from "./API";
+import { fetchAllBooks } from "./API";
 import "./App.css";
 
 function App() {

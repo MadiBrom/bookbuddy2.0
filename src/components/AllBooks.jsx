@@ -1,13 +1,11 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import NavBar from "./NavBar";
+import { handleLogin, handleSignUp } from "../API";
 
 function AllBooks({ books }) {
   const navigate = useNavigate();
   const [searchParams, setSearchParams] = useState("");
-  const [featBook, setBook] = useState(null);
-
-  const featuredBook = books.find((book) => book.id === featBook);
 
   const filteredBooks = books.filter((book) =>
     book.title.toLowerCase().includes(searchParams.toLowerCase())
@@ -16,11 +14,14 @@ function AllBooks({ books }) {
   function handleClick(id) {
     navigate(`/books/${id}`);
   }
-  console.log("hello");
   return (
     <div className="App">
       <header>
-        <NavBar setSearchParams={setSearchParams} />
+        <NavBar
+          setSearchParams={setSearchParams}
+          handleLogin={handleLogin}
+          handleSignUp={handleSignUp}
+        />
       </header>
       <h2 id="title">Library</h2>
       <div className="books-container">
